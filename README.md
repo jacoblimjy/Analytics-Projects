@@ -1,6 +1,6 @@
 # The Airline Seat-booking System (TASS)
 ## ERD/LOGICAL DATA MODEL/SQL QUERIES
-I designed a central seat-booking database to be used by all booking offices.
+I designed a central seat-booking database to be used by all booking offices. Queries were then made to gain more insights.
 
 **Flight Information:**
 - Flight number (unique)
