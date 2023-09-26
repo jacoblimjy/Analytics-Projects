@@ -1,45 +1,58 @@
 # The Airline Seat-booking System (TASS)
 ## ERD/LOGICAL DATA MODEL/SQL QUERIES
 I designed a central seat-booking database to be used by all booking offices.
-A flight has a flight number which is unique, an airline code, and a business class indicator.
-Flight availability has flight number, date and time of departure, number of total seats available in business class, number of confirmed seats in business class, number of total seats available in economy class, and number of confirmed seats in economy class.
-Customers may come from any country, not just from the six countries above. A customer is identified by a customer id (which is unique) and has a first name, a last name and a mailing address. A customer also has zero or more phone numbers, and zero or more email addresses.
-A mailing address is composed of street, city, province, country and postal code. Phone number has country code, area code and local number which is unique in the country. Email address has only one string, and no structure is assumed.
-A customer can book one or more flights. Two or more customers may have same mailing address and/or same phone number(s). But the email address is unique for each customer. First name and last name do not have to be unique.
-Booking has the following information:
-• a unique booking id
-• booking city
-• booking date
-• flight number
-• departure date and time (in local time, and time is always in hours and minutes: in 24 hours format e.g. 13:00
-for 1pm exactly)
-• arrival date and time (in local time)
-• class indicator (i.e., business or economy). This is to be considered as an entity.
-• total price (airport tax in origin airport plus airport tax in destination airport plus flight price – in local
-currency)
-• flight price (business class flight price is 1.5 times of flight price)
-• status indicator (there are three types: confirmed – the booking is reserved/booked for the customer; canceled
-– the customer canceled the booking, scratched – the customer had not paid in full 30 days prior to the
-departure). This is to be considered as an entity.
-• paid by (the customer who is responsible for payment)
-• paid amount (amount-paid-so far (in local currency))
-• balance (outstanding balance (in local currency))
-Copyright © Danny Poo, 2023 Page 1 of 3
-Some additional information:
-• The first name and last name are to be printed on the ticket.
-• The airport taxes must be stored in local currencies (i.e. Begonia dollars, Carnation dollars, Gaura dollars,
-Ipomoea dollars, Rose dollars, and Tulip dollars).
-• Since the exchange rates change daily, they also must be stored for calculations of all prices involved.
-Assumptions were made for the followings:
-• One City only has one Airport.
-• One Country must have at least one City.
-• Customers may come from countries other than the six countries listed here; the names of their originating
-countries will be provided in the database.
-• A Customer in the list may not have any booking.
-• All Booking Offices have at least one booking.
-• One booking is for one available Flight only.
-• All derived attributes (if any) are to be stored in their respective database tables.
 
+**Flight Information:**
+- Flight number (unique)
+- Airline code
+- Business class indicator
+
+**Flight Availability:**
+- Flight number
+- Date and time of departure
+- Number of total seats in business class
+- Number of confirmed seats in business class
+- Number of total seats in economy class
+- Number of confirmed seats in economy class
+
+**Customers:**
+- Customer ID (unique)
+- First name
+- Last name
+- Mailing address (composed of street, city, province, country, and postal code)
+- Phone numbers (each has country code, area code, and a unique local number)
+- Email addresses (unique per customer)
+
+**Booking:**
+- Unique booking ID
+- Booking city
+- Booking date
+- Flight number
+- Departure date and time (local time, 24-hour format)
+- Arrival date and time (local time)
+- Class indicator (business or economy)  
+  _Entity_
+- Total price (local currency)
+- Flight price (business class is 1.5x of economy class price)
+- Status indicator (confirmed, canceled, scratched)  
+  _Entity_
+- Paid by (customer responsible for payment)
+- Paid amount (local currency)
+- Balance (outstanding, local currency)
+
+**Additional Information:**
+- The first name and last name are to be printed on the ticket.
+- Airport taxes stored in local currencies.
+- Daily exchange rates stored for price calculations.
+
+**Assumptions:**
+- One city = One airport
+- One country >= One city
+- Customers can come from countries other than the listed six.
+- Some customers might not have bookings.
+- All booking offices have at least one booking.
+- One booking corresponds to one flight.
+- All derived attributes are stored in their database tables.
 ## Data Visualisation and Storytelling with Tableau
 Using dataset “TwoAirlineFlights.xlsx” on flight data of two airlines for July and August 2019. The two airlines, Acorn Airlines (AA) and Berry Airlines (BA) were compared to gain insights such that improvements can be made for Acorn Airlines.
 
