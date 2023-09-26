@@ -54,7 +54,7 @@ I designed a central seat-booking database to be used by all booking offices.
 - One booking corresponds to one flight.
 - All derived attributes are stored in their database tables.
 ## Data Visualisation and Storytelling with Tableau
-Using dataset “TwoAirlineFlights.xlsx” on flight data of two airlines for July and August 2019. The two airlines, Acorn Airlines (AA) and Berry Airlines (BA) were compared to gain insights such that improvements can be made for Acorn Airlines.
+tilizing the dataset "TwoAirlineFlights.xlsx," we delved into the flight data for Acorn Airlines (AA) and Berry Airlines (BA) from July and August 2019. The aim was to uncover insights and comparisons that could guide enhancements for Acorn Airlines.
 
 BACKGROUND INFORMATION
 
